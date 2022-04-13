@@ -1,6 +1,6 @@
 ---
 title: "Activity 10.1 - Iterating"
-author: "Name"
+author: "Andrew Hodge"
 output: github_document
 ---
 
@@ -30,6 +30,10 @@ And, although it is structured (hierarchical/tree based), HTML data is often not
 However, it is not loaded with the tidyverse so you will need to load it separately.
 In the space below, load `{tidyverse}` and `{rvest}`.
 
+```{r loading_in}
+library(tidyverse)
+library(rvest)
+```
 
 
 The core functions that you may find useful are:
@@ -182,6 +186,36 @@ What we want to do is *map* the `scrape_show_info` function to each element of o
 This is a purrr-fect (sorry) opportunity to use `map_df`...
 
 ![Sorry, not sorry](https://media.giphy.com/media/xUA7aVAw3xQ4pzYkiA/giphy.gif)
+
+With the `map*` functions, you specify a list or vector that you want to apply a function to and it returns an object of the same length and the input.
+There are several types of pre-identified outputs, but we want to return a dataframe/tibble so we will use `map_df`
+Create a new object called `tmdb_map` that contains the show information for the top 100 TV shows using `map_df`
+
+
+
+
+Verify that your `tmdb_for_loop` and `tmdb_map` objects contain the exact same information using the `waldo::compare` function.
+
+
+
+
+
+## Update your function
+
+Update your `scrape_show_info` function (do it above) to contain as much additional information that you can.
+Also, can you scrape more than the first 20 shows?
+Create a `tmdb_popular_shows` tibble that contains all this show information for the top 100 TV shows.
+Save this tibble as a `.csv` file in a `/data` folder within your RStudio Project.
+
+
+
+
+
+## Attribution
+
+This activity is inspired by one of Mine Çetinkaya-Rundel's [STA 199](http://www2.stat.duke.edu/courses/Spring18/Sta199/) labs.
+
+
 
 With the `map*` functions, you specify a list or vector that you want to apply a function to and it returns an object of the same length and the input.
 There are several types of pre-identified outputs, but we want to return a dataframe/tibble so we will use `map_df`
